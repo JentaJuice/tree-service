@@ -5,6 +5,10 @@
   "repository": "https://github.com/JentaJuice/tree-service.git",
   "author": "Suphakit P. <me@suphakit.net>",
   "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "npx nodemon app.js"
+  },
   "dependencies": {
     "bash-color": "^0.0.4",
     "body-parser": "^1.20.2",
