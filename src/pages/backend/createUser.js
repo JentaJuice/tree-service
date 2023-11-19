@@ -11,7 +11,7 @@ const UserCreationPage = `<!DOCTYPE html>
 <body>
   <div class="container">
     <div class="form-container">
-      <form action="/api/create/user">
+      <form action="/api/create/user" method="post">
         <input type="text" name="username" id="username" placeholder="Username" />
         <input type="password" name="password" id="password" placeholder="Password">
         <input type="password" name="conf-password" id="conf-password" placeholder="Confirm password">
