@@ -10,15 +10,17 @@ const UserCreationPage = `<!DOCTYPE html>
 </head>
 <body>
   <div class="container">
-    <form action="/api/create/user">
-      <input type="text" name="username" id="username" placeholder="Username" />
-      <input type="password" name="password" id="password" placeholder="Password">
-      <input type="password" name="conf-password" id="conf-password" placeholder="Confirm password">
-
-      <button type="submit" id="submitButton" disabled>
-        Add user!
-      </button>
-    </form>
+    <div class="form-container">
+      <form action="/api/create/user">
+        <input type="text" name="username" id="username" placeholder="Username" />
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="password" name="conf-password" id="conf-password" placeholder="Confirm password">
+  
+        <button type="submit" id="submitButton" disabled>
+          Add user!
+        </button>
+      </form>
+    </div>
   </div>
 
   <script>
