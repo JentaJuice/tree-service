@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const songs = new mongoose.Schema({
+const link = new mongoose.Schema({
   songID: {
     type: String,
     required: true,
@@ -19,4 +19,4 @@ const songs = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('songs', songs)
+module.exports = mongoose.model('link', link)

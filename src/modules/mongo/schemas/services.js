@@ -1,14 +1,17 @@
 const mongoose = require('mongoose')
 
-const songs = new mongoose.Schema({
+const services = new mongoose.Schema({
   service: {
     type: String,
     required: true,
   },
-  image: {
+  svclass: {
+    type: String,
+  },
+  link: {
     type: String,
     required: true,
   },
 })
 
-module.exports = mongoose.model('songs', songs)
+module.exports = mongoose.model('services', services)
