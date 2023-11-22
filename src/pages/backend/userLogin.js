@@ -26,7 +26,7 @@ const LoginPage = `<!DOCTYPE html>
             required
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             name="password"
             id="password"
