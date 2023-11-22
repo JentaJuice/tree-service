@@ -23,6 +23,9 @@ async function userLogin(app) {
         let dec = decryptData(user.password)
 
         if (dec == body.password) {
+          req.session.loggedIn = true
+          res.locals.username = body.user
+          req.session.username = res.locals.username
           res.redirect('/backend/dashboard')
         } else {
           res.redirect(
