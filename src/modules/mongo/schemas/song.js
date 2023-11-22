@@ -13,6 +13,10 @@ const songs = new mongoose.Schema({
     required: true,
     type: Number,
   },
+  holder: {
+    required: true,
+    type: String,
+  },
   image: {
     required: true,
     type: String,
