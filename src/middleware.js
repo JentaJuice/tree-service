@@ -25,6 +25,7 @@ async function Middleware(app, exp, root) {
   )
 
   app.use('/statics', exp.static(root + '/statics'))
+  app.use('/', exp.static(root + '/statics_littlelink'))
 }
 
 module.exports = Middleware
