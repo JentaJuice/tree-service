@@ -1,8 +1,27 @@
-async function ArtistTemplate(data) {
+const { SocialRender } = require('../../../modules/statics/socials')
+
+async function ArtistTemplate(data, dataList) {
   const title = data.artist
-  const desp = ''
-  const profileIMG = ''
-  let list = ''
+  const desp = data.desp
+  const profileIMG = data.img
+
+  function eachList() {
+    let objectListing = ''
+
+    for (let i = 0; i < dataList.length; i++) {
+      const temp = SocialRender(dataList[i])
+
+      if (objectListing == '') {
+        objectListing = temp + '<br />'
+      } else {
+        objectListing += temp + '<br />'
+      }
+    }
+
+    console.log(objectListing)
+
+    return objectListing
+  }
 
   const slug = `<!DOCTYPE html>
 <html lang="en">
@@ -36,9 +55,9 @@ async function ArtistTemplate(data) {
         <h1 role="heading">${title}</h1>
 
         <!-- Short Bio -->
-        <p>Bio</p>
+        <p>${desp}</p>
 
-        ${list}
+        ${eachList()}
 
         <br>
 
