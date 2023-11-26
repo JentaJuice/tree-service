@@ -9,6 +9,10 @@ const slug = new mongoose.Schema({
     required: true,
     type: String,
   },
+  desp: {
+    require: true,
+    type: String,
+  },
   img: {
     require: true,
     type: String,
