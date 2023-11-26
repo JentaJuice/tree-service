@@ -1,10 +1,10 @@
-const AppleMusic = require('../../pages/songs/services/AppleMusic')
-const AmazonMusic = require('../../pages/songs/services/AmazonMusic')
-const BandCamp = require('../../pages/songs/services/Bandcamp')
-const SoundCloud = require('../../pages/songs/services/Soundcloud')
-const Spotify = require('../../pages/songs/services/Spotify')
-const Youtube = require('../../pages/songs/services/Youtube')
-const YouTubeMusic = require('../../pages/songs/services/YoutubeMusic')
+const AppleMusic = require('../../pages/frontend/songs/services/AppleMusic')
+const AmazonMusic = require('../../pages/frontend/songs/services/AmazonMusic')
+const BandCamp = require('../../pages/frontend/songs/services/Bandcamp')
+const SoundCloud = require('../../pages/frontend/songs/services/Soundcloud')
+const Spotify = require('../../pages/frontend/songs/services/Spotify')
+const Youtube = require('../../pages/frontend/songs/services/Youtube')
+const YouTubeMusic = require('../../pages/frontend/songs/services/YoutubeMusic')
 
 const services = [
   'Amazon Music',
