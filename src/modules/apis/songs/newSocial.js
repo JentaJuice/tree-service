@@ -4,7 +4,7 @@ const socialSchema = require('../../mongo/schemas/social')
 async function newSocial(app) {
   app.get('/backend/artists/social', async (req, res) => {
     if (req.session.loggedIn) {
-      res.send(socialPage)
+      res.send(await socialPage())
     } else {
       res.redirect('/backend/login')
     }
