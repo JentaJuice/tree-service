@@ -23,6 +23,7 @@ async function newArtist(app) {
           let data = {
             artist: body.artist,
             slug: body.slug,
+            img: body.img,
           }
 
           let artist = new artistSchemas(data)

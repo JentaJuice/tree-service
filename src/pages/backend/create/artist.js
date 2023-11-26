@@ -32,6 +32,13 @@ const artistPage = `<!DOCTYPE html>
             placeholder="Slug on URL"
             required
           />
+          <input
+            type="text"
+            id="img"
+            name="img"
+            placeholder="Profile Image URL"
+            required
+          />
 
           <button type="submit">Create!</button>
         </form>
