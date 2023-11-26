@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const slug = new mongoose.Schema({
+const social = new mongoose.Schema({
   artistSlug: {
     required: true,
     type: String,
@@ -15,4 +15,4 @@ const slug = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('slug', slug)
+module.exports = mongoose.model('social', social)
