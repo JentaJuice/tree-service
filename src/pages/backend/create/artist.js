@@ -34,6 +34,13 @@ const artistPage = `<!DOCTYPE html>
           />
           <input
             type="text"
+            id="desp"
+            name="desp"
+            placeholder="Description on Profile"
+            required
+          />
+          <input
+            type="text"
             id="img"
             name="img"
             placeholder="Profile Image URL"
