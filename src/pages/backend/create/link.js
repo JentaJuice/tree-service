@@ -1,3 +1,41 @@
+const songSchema = require('../../../modules/mongo/schemas/song')
+const { services } = require('../../../modules/statics/services')
+
+async function songEach() {
+  const songList = await songSchema.find().sort({ _id: -1 }).exec()
+  let list = ''
+  console.log(songList)
+
+  for (let i = 0; i < songList.length; i++) {
+    let sl = songList[i]
+    let template = `<option value="${sl._id}">${sl.artist} - ${sl.title}</option>`
+
+    if (list == '') {
+      list = template
+    } else {
+      list += template
+    }
+  }
+
+  return list
+}
+
+function serviceEach() {
+  let list = ''
+
+  for (let i = 0; i < services.length; i++) {
+    const template = `<option value="${services[i]}">${services[i]}</option>`
+
+    if (list == '') {
+      list = template
+    } else {
+      list += template
+    }
+  }
+
+  return list
+}
+
 async function linkPage() {
   const page = `<!DOCTYPE html>
 <html lang="en">
@@ -19,7 +57,22 @@ async function linkPage() {
     <div class="container">
       <div class="form-container">
         <form action="/api/songs/links" method="post">
-
+          <select name="songs" id="songs" required>
+            <option value="">
+              -- Select Songs --
+            </option>
+            ${await songEach()}
+          </select>
+          <select name="service" id="service" required>
+            <option value="">
+              -- Select Services --
+            </option>
+            ${serviceEach()}
+          </select>
+          <input type="text" name="link" id="link" placeholder="Song URL" required>
+          <button type="submit">
+            Add!
+          </button>
         </form>
       </div>
     </div>
