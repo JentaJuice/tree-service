@@ -18,8 +18,6 @@ async function ArtistTemplate(data, dataList) {
       }
     }
 
-    console.log(objectListing)
-
     return objectListing
   }
 
