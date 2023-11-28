@@ -5,6 +5,10 @@ const songs = new mongoose.Schema({
     required: true,
     type: String,
   },
+  slug: {
+    required: true,
+    type: String,
+  },
   artist: {
     required: true,
     type: String,

@@ -45,6 +45,13 @@ async function songsPage() {
             placeholder="Song title"
             required
           />
+          <input
+            type="text"
+            name="slug"
+            id="slug"
+            placeholder="URL slug"
+            required
+          />
           <select name="artist" id="artist" required>
             <option value="" selected>-- Select Artist --</option>
             ${await artistName()}

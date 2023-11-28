@@ -27,6 +27,7 @@ async function newSongs(app) {
         } else {
           const data = {
             title: body.title,
+            slug: body.slug,
             artist: body.artist,
             year: Number(body.year),
             holder: body.holder,
