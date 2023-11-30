@@ -2,6 +2,8 @@ const MainAPI = require('./modules/apis/main')
 const FrontEndRoutes = require('./modules/routes/main')
 
 async function Routes(app, exp, root) {
+  await MainAPI(app)
+
   app.get('/', (req, res) => {
     res.send('hi :)')
   })
@@ -13,7 +15,6 @@ async function Routes(app, exp, root) {
     res.send('logged In')
   })
 
-  await MainAPI(app)
   await FrontEndRoutes(app)
 }
 
