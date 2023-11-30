@@ -1,8 +1,27 @@
-async function SongPageTemplate(data) {
-  const title = ''
-  const desp = ''
-  const profileIMG = ''
-  let list = ''
+const { ServiceRender } = require('../../../modules/statics/services')
+const songSchema = require('../../../modules/mongo/schemas/slug')
+
+async function SongPageTemplate(data, dataList) {
+  const title = data.title
+  const desp = (await songSchema.findOne({ slug: data.artist })).artist
+  const profileIMG = data.image
+  const footer = `&reg; ${data.year} ${data.holder}. All Right Reserved.`
+
+  function eachList() {
+    let objectListing = ''
+
+    for (let i = 0; i < dataList.length; i++) {
+      const temp = ServiceRender(dataList[i])
+
+      if (objectListing == '') {
+        objectListing = temp + '<br />'
+      } else {
+        objectListing += temp + '<br />'
+      }
+    }
+
+    return objectListing
+  }
 
   const slug = `<!DOCTYPE html>
 <html lang="en">
@@ -36,11 +55,13 @@ async function SongPageTemplate(data) {
         <h1 role="heading">${title}</h1>
 
         <!-- Short Bio -->
-        <p>Bio</p>
+        <p>${desp}</p>
 
-        ${list}
+        ${eachList()}
 
         <br>
+
+        <p>${footer}</p>
 
         <p><a href="/privacy.html">Privacy Policy</a> | Build your own by forking <a href="https://littlelink.io" target="_blank" rel="noopener" role="button">LittleLink</a>.</p>
 
