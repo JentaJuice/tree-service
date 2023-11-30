@@ -20,32 +20,32 @@ function ServiceRender(data) {
   let rtnData = ''
 
   switch (data.service) {
-    case services[0]:
-      AmazonMusic(data.link)
+    case String(services[0]):
+      rtnData = AmazonMusic(data.link)
       break
 
-    case services[1]:
-      AppleMusic(data.link)
+    case String(services[1]):
+      rtnData = AppleMusic(data.link)
       break
 
-    case services[2]:
-      BandCamp(data.link)
+    case String(services[2]):
+      rtnData = BandCamp(data.link)
       break
 
-    case services[3]:
-      SoundCloud(data.link)
+    case String(services[3]):
+      rtnData = SoundCloud(data.link)
       break
 
-    case services[4]:
-      Spotify(data.link)
+    case String(services[4]):
+      rtnData = Spotify(data.link)
       break
 
-    case services[5]:
-      Youtube(data.link)
+    case String(services[5]):
+      rtnData = Youtube(data.link)
       break
 
-    case services[6]:
-      YouTubeMusic(data.link)
+    case String(services[6]):
+      rtnData = YouTubeMusic(data.link)
       break
 
     default:
