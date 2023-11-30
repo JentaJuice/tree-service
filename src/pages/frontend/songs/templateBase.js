@@ -10,8 +10,19 @@ async function SongPageTemplate(data, dataList) {
   function eachList() {
     let objectListing = ''
 
+    const renderOrder = ['Youtube', 'Youtube Music', 'Spotify', 'Apple Music']
+
     for (let i = 0; i < dataList.length; i++) {
-      const temp = ServiceRender(dataList[i])
+      let temp = ''
+
+      for (let j = 0; j < renderOrder.length; j++) {
+        if (String(dataList[j].service) != renderOrder[i]) {
+          temp = ''
+        } else {
+          temp = ServiceRender(dataList[j])
+          break
+        }
+      }
 
       if (objectListing == '') {
         objectListing = temp + '<br />'
