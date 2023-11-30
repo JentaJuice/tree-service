@@ -10,12 +10,21 @@ async function SongPageTemplate(data, dataList) {
   function eachList() {
     let objectListing = ''
 
-    const renderOrder = ['Youtube', 'Youtube Music', 'Spotify', 'Apple Music']
+    const renderOrder = [
+      'Youtube',
+      'Youtube Music',
+      'Spotify',
+      'Apple Music',
+      'Amazon Music',
+      'SoundCloud',
+      'Bandcamp',
+    ]
 
     for (let i = 0; i < dataList.length; i++) {
       let temp = ''
+      let j = 0
 
-      for (let j = 0; j < renderOrder.length; j++) {
+      for (j = 0; j < renderOrder.length; j++) {
         if (String(dataList[j].service) != renderOrder[i]) {
           temp = ''
         } else {
@@ -24,10 +33,18 @@ async function SongPageTemplate(data, dataList) {
         }
       }
 
-      if (objectListing == '') {
-        objectListing = temp + '<br />'
+      if (temp != '') {
+        if (objectListing == '') {
+          objectListing = temp + '<br />'
+        } else {
+          objectListing += temp + '<br />'
+        }
       } else {
-        objectListing += temp + '<br />'
+        if (objectListing == '') {
+          objectListing = temp
+        } else {
+          objectListing += temp
+        }
       }
     }
 
