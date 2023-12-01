@@ -1,10 +1,9 @@
 const { SocialRender } = require('../../../modules/statics/socials')
 
 async function ArtistTemplate(data, dataList) {
-  console.log(data)
-  const title = data.artist || ''
-  const desp = data.desp || ''
-  const profileIMG = data.img || ''
+  const title = data != null || data != undefined ? data.artist : ''
+  const desp = data != null || data != undefined ? data.desp : ''
+  const profileIMG = data != null || data != undefined ? data.img : ''
 
   function eachList() {
     let objectListing = ''

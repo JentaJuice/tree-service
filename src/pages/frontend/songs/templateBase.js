@@ -2,10 +2,16 @@ const { ServiceRender } = require('../../../modules/statics/services')
 const songSchema = require('../../../modules/mongo/schemas/slug')
 
 async function SongPageTemplate(data, dataList) {
-  const title = data.title
-  const desp = (await songSchema.findOne({ slug: data.artist })).artist
-  const profileIMG = data.image
-  const footer = `&reg; ${data.year} ${data.holder}. All Right Reserved.`
+  const title = data != null || data != undefined ? data.title : ''
+  const desp =
+    data != null || data != undefined
+      ? (await songSchema.findOne({ slug: data.artist })).artist
+      : ''
+  const profileIMG = data != null || data != undefined ? data.image : ''
+  const footer =
+    data != null || data != undefined
+      ? `&reg; ${data.year} ${data.holder}. All Right Reserved.`
+      : ''
 
   function eachList() {
     let objectListing = ''
